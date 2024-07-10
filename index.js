@@ -1,7 +1,14 @@
 import express from "express";
+import collegeRouter from "./routes/collegeRoute";
 import { dbconnection } from "./config/db.js";
+import cors from 'cors';
+
 // create server
 const app = express();
+
+app.use(collegeRouter);
+app.use(cors());
+
 
 // Database connection
 dbconnection();
